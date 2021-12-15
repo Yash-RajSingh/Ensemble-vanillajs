@@ -1,0 +1,185 @@
+:root{
+    --head: 35px;
+    --headd: 50px;
+    --subhead: 35px;
+    --txt: 19px;
+    --darkblue: #17488a;
+    --btn: #04131c;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-weight: 0;
+}
+
+
+/* --------FONTS--------- */
+@font-face {
+    font-family: 'architect';
+    src: url(fonts/Architects.ttf);
+}
+@font-face {
+    font-family: 'dancing';
+    src: url(fonts/Dancing.ttf);
+}
+@font-face {
+    font-family: 'anton';
+    src: url(fonts/Anton-Regular.ttf);
+}
+@font-face {
+    font-family: 'robot';
+    src: url(fonts/Roboto.ttf);
+}
+@font-face {
+    font-family: 'baba';
+    src: url(fonts/Bebas.ttf);
+}
+@font-face {
+    font-family: 'rjs';
+    src: url(fonts/Rajdhani-Bold.ttf);
+}
+
+body{
+    background: linear-gradient(to top right,#ffffffa4 1%, #37acffd3 55%, #00285c 125%)fixed;
+    font-family: 'Robot';
+    font-size: var(--txt);
+}
+
+
+/*---------Custom Scrollbar Styling---------*/
+::-webkit-scrollbar{
+    width: 1vw;
+    background: #37acffd3;
+    border: 0.5px solid #000000;
+    border-radius: 2px;
+}
+/*--------- Handle--------- */
+::-webkit-scrollbar-thumb {
+    background: #094ca3b4;
+    border: 0.5px solid #06164d;
+    border-radius: 4px;
+    background-clip: padding-box;
+}
+/*-----Handle on hover--------- */ 
+::-webkit-scrollbar-thumb:hover {
+    background: #59738288; 
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* -------HEARER STYLING---------- */
+
+.header{
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header p{
+    font-size: var(--head);
+    font-family: "anton";
+    letter-spacing: 1px;
+    margin: 0 0 0 2%;
+    /* animation: slide linear ease-in; */
+}
+
+.pseudobody{
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+p{
+    font-size: var(--txt);
+}
+
+
+/* ------FOOTER STYLING------- */
+.footer{
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2% 0 0 0;
+}
+.footer a{
+    padding: 15px;
+}
+.footer a:hover{
+    background-color: rgba(0,0,0,0.6);
+    font-size: 21px;
+    color: white;
+}
+
+
+/* ------PRELOADER STYLING--------*/
+#loader {     
+    animation: loader 5s linear infinite; 
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+}
+@keyframes loader {
+    0% { left: -100px }
+    100% { left: 110%; }
+}
+#box {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    animation: animate .7s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+}
+@keyframes animate {
+    17% { border-bottom-right-radius: 3px; }
+    25% { transform: translateY(9px) rotate(22.5deg); }
+    50% {
+    transform: translateY(18px) scale(1,.9) rotate(45deg) ;
+    border-bottom-right-radius: 40px;
+    }
+    75% { transform: translateY(9px) rotate(67.5deg); }
+    100% { transform: translateY(0) rotate(90deg); }
+} 
+#shadow { 
+    width: 70px;
+    height: 5px;
+    background: rgb(0, 0, 0);
+    opacity: 0.5;
+    position: absolute;
+    top: 96px;
+    left: 5px;
+    border-radius: 50%;
+    animation: shadow .5s linear infinite;
+}
+@keyframes shadow {
+    50% {
+    transform: scale(1.2,1);
+    }
+}
+.loaderbody{
+    height: 100vh;
+    width: 100vw;
+    background: #37acff;
+    position: fixed;
+}
+
+/* --------END OF PRELOADER STYLING------ */
+
+
+@keyframes slide{
+    from{
+        margin-left: -100%;
+    }
+    to{
+        margin-left: 2%;
+    }
+}
+

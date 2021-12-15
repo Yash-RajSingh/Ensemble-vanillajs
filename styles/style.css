@@ -1,0 +1,102 @@
+#btn1{
+    padding: 10px;
+    height: max-content;
+    background: var(--btn);
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    margin: auto 0;
+    margin-right: 3%;
+}
+#btn2{
+    padding: 10px;
+    height: max-content;
+    background: var(--btn);
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    margin: 5% 0 0 15%;
+}
+.p-h1{
+    margin: 1% 0 0 4%;
+    font-family: 'dancing';
+    font-size: 60px;
+    color: var(--darkblue);
+    -webkit-text-stroke: 0.001ex rgba(0, 0, 0, 0.549);
+}
+
+.block1{
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.block1left{
+    padding: 10px;
+    width: 50%;
+}
+.block1left p{
+    margin-top: 3%;
+}
+
+.block1 img{
+    width: 40%;
+}
+
+.subhead{
+    font-size: var(--subhead);
+    margin: 2% 0 0 0%;
+}
+
+.block2{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 95%;
+}
+.block2 img{
+    width: 60%;
+}
+.block2 p{
+    margin: 2% 0 0 3%;
+}
+
+.subhead2{
+    font-size: var(--subhead);
+    margin-left: 3%;
+    margin-top: 5%;
+}
+ul{
+    margin: 4% 0 0 5%;
+}
+
+.block3{
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+}
+.block3left{
+    width: 60%;
+}
+.block3left h1{
+    margin: 1% 0 0 2%;
+    font-family: 'architect';
+    font-size: 50px;
+    color: var(--darkblue);
+    -webkit-text-stroke: 0.001ex rgba(0, 0, 0, 0.549);
+}
+
+.block3 img{
+    width: 35%;
+}
+h2{
+    font-size: 22px;
+    margin-top: 5%;
+    color: transparent;
+    -webkit-text-stroke: 0.11px #000000;
+    text-align: center;
+}

@@ -1,0 +1,86 @@
+:root{
+    --form-font: 22px;
+}
+
+.pseudobody{
+    width: 95%;
+    margin: 2% 0 0 auto;
+}
+
+.pseudobody h1{
+    font-family: 'architect';
+}
+
+.block1{
+    margin-top: 1%;
+    width: 97%;
+    height: 70vh;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.block1 img{
+    width: 40%;
+}
+
+.card{
+    /* border: 2px solid #800080; */
+    width: 25%;
+    height: 96%;
+    background: #fdfdfd8f;
+    margin: auto 0;
+    padding: 10px;
+    font-size: var(--form-font);
+    border-radius: 10px;
+}
+
+.card:active,.card::before ,.card::after, .card:hover{
+    background-color: #fdfdfdc7;
+    box-shadow: 3px 3px 3px black;
+}
+
+#card-login{
+    display: none;
+    height: 85%;
+}
+form{
+    /* border: 2px solid green; */
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0%;
+}
+
+
+input{
+    width: 98%;
+    height: 25px;
+    padding: 1px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+/* ------SEPARATE STYLING FOR LOGIN FORM--------- */
+
+#login{
+    /* border: 2px solid green; */
+    width: 83%;
+    padding: 22px;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+#login input{
+    margin: 5% auto;
+    
+}
+
+.btn{
+    background: var(--btn);
+    color: white;
+    border: 0px;
+    padding:  7px 10px;
+    border-radius: 10px;
+}

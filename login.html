@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ENSEMBLE</title>
+        <link rel="shortcut icon" type="image/jpg" href="assets/l1.png"/>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/all.css">
+        <link rel="stylesheet" href="styles/animations.css">
+        <link rel="stylesheet" href="styles/login.css">
+    </head>
+    <body>
+        <!-- PRELOADER -->
+        <div class="loaderbody">
+            <div id="loader">
+                <div id="shadow"></div>
+                <div id="box"></div>
+              </div>
+        </div>
+
+        <!-- HEADER -->
+        <div class="header">
+            <p>Ensemble</p>
+        </div>
+
+        <!-- MAIN WEBSITE BODY  -->
+        <div class="pseudobody">
+            <h1>Just one last step before you're all set to go!</h1>
+            <div class="block1">
+            <img src="assets/c14.png">
+                <div class="card" id="card-login">
+                    <center><p>Don't have an account?</p>
+                    <button class="btn" onclick="toggle()">Sign Up</button></center>
+                    <form id="login">
+                        <label for="email">E-mail</label><br>
+                        <input type="text" id="email" placeholder="Enter Your E-mail" autocomplete="off"><br>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" placeholder="Enter Your Password"  autocomplete="off">
+                        <center><button type="submit" class="btn">Log In</button></center>
+                    </form>
+                    <center>
+                        <p>
+                            Forgot your password?<br>
+                            <a href="#">
+                            Reset it now!
+                            </a>
+                        </p>
+                    </center>
+                </div>
+                <div class="card" id="card-signup">
+                    <center><p>Already have an account?</p>
+                    <button class="btn" onclick="toggle()">Log In</button></center>
+                    <form id="signup">
+                        <label for="semail">E-mail</label><br>
+                        <input type="text" id="semail"  placeholder="Enter Your E-mail" autocomplete="off"><br>
+                        <label for="username">UserName</label><br>
+                        <input type="text" id="susername" placeholder="Enter Your Username" autocomplete="off"><br>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="spassword" placeholder="Enter Your Password" autocomplete="off">
+                        <label for="question">Security Question</label>
+                        <input type="text" id="question" placeholder="Enter security question for reseting password"  autocomplete="off">
+                        <label for="answer">Answer</label>
+                        <input type="text" id="answer" placeholder="Enter the answer for security question"  autocomplete="off">
+                        <center><button type="submit" class="btn">Sign Up</button></center>
+                    </form>
+                </div>           
+            </div>
+
+
+        </div> <!-- END OF PSEUDOBODY -->
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <a href="https://github.com/Yash-RajSingh/Ensemble">© Team-Ensemble</a>
+            <a href="">Privacy Policy</a>
+            <a href="about.html">About</a>
+            <a href="">Contact Us</a>
+            <a href="index.html">Home</a>
+        </div>         <!-- END OF FOOTER -->
+        
+        <script src="scripts/display.js"></script>
+        <script src="scripts/login.js"></script>
+    </body>
+</html>
