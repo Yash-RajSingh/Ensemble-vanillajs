@@ -65,7 +65,7 @@ login.addEventListener('submit', (e) =>{
       console.log(data);
       lmsg.innerHTML = `<center><h4>${data.message}</h4></center>`;
       if(data.status == 200){
-        window.location.href = '../boards.html';
+        window.location.href = './boards.html';
         sessionStorage.setItem("token", `${data.token}`);
         sessionStorage.setItem("uname", `${data.username}`);
         sessionStorage.setItem("uid", `${data.uid}`);
