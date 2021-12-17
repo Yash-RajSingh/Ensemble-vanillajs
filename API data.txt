@@ -1,0 +1,23 @@
+Register API:-
+    Base URL:- https://ensemble-p1.herokuapp.com/authentication/register
+    arguements:- username, email,password,sec_question,sec_answer.
+    response:- message, status.
+Login API:-
+    Base URL:- https://ensemble-p1.herokuapp.com/authentication/login
+    arguements:- email,password.
+    response:- message, status, token, username, unique user ID.
+
+Get boards API:-
+    Base URL:- https://ensemble-p1.herokuapp.com/boards/get_boards
+    arguements:- UUID, token
+    response:- 
+Insert boards API:-
+    Base URL:- https://ensemble-p1.herokuapp.com/boards/insert_board
+    arguements:- UUID, title, description, token
+Delete board:-
+    Base URL:- https://ensemble-p1.herokuapp.com/boards/delete_board
+    method:- Delete
+    arguements:- buid, token
+Update board:- 
+    Base URL:- https://ensemble-p1.herokuapp.com/boards/update_board
+    arguements:- buid, title, description

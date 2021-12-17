@@ -4,7 +4,8 @@
 
 .pseudobody{
     width: 95%;
-    margin: 2% 0 0 auto;
+    margin: 0 auto;
+    margin-top: 2%;
 }
 
 .pseudobody h1{
@@ -14,20 +15,22 @@
 .block1{
     margin-top: 1%;
     width: 97%;
-    height: 70vh;
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-
+.imgdiv{
+    /* border: 2px solid black; */
+    width: 50%;
+}
 .block1 img{
-    width: 40%;
+    width: 75%;
 }
 
 .card{
     /* border: 2px solid #800080; */
     width: 25%;
-    height: 96%;
     background: #fdfdfd8f;
     margin: auto 0;
     padding: 10px;
@@ -42,7 +45,6 @@
 
 #card-login{
     display: none;
-    height: 85%;
 }
 form{
     /* border: 2px solid green; */

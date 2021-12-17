@@ -8,11 +8,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/all.css">
-        <link rel="stylesheet" href="syles/animations.css">
-        <link rel="stylesheet" href="syles/boards.css">
+        <!-- <link rel="stylesheet" href="syles/animations.css"> -->
+        <link rel="stylesheet" href="styles/boards.css">
     </head>
     <body>
-        <!-- PRELOADER -->
+        <!-- PRELOADER --> 
         <div class="loaderbody">
             <div id="loader">
                 <div id="shadow"></div>
@@ -22,13 +22,44 @@
 
         <!-- HEADER -->
         <div class="header">
-            <p>Ensemble</p>
+            <p class="hh">Ensemble</p>
         </div>
 
         <!-- MAIN WEBSITE BODY  -->
         <div class="pseudobody">
-
-
+            <h2 id="name"></h2>
+                <div class="block1">
+                    <div class="up">
+                        <form id="iboard" class="iboard">
+                            <label for="bname">Board Name</label><br>
+                            <input type="text" id="bname" placeholder="Enter board name"><br>
+                            <label for="description">Board description</label><br>
+                            <input type="text" id="desc" placeholder="Enter board description"><br>
+                            <button type="submit" class="btn">Add board </button>
+                        </form>
+                        <div class="iboard2">
+                            <img src="assets/info.png" id="info">
+                            <p class="info">Hover here for usage instructions </p>
+                        </div>
+                        <div id="instructions">
+                            <h3>Here's how to use Ensemble</h3>
+                            <ul>
+                                <li>Here at Ensemble, we refer to workspaces as boards.</li>
+                                <li>To add workspaces, just fill in the required fields in the box on the left and hit add</li>
+                                <li>Create as many boards as you need, there's no limit.</li>
+                                <li>To open a workspace, just click on the desired workspace and you'll be refirected to your workspace</li>
+                                <li>Add lists to plan out your tasks and monitor them</li>
+                                <li>Invite people to work with and work together</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <h2><u>Current boards :-</h2></u>
+                        <div id="container">
+                            
+                        </div>
+                    </div>
+                </div>
 
         </div> <!-- END OF PSEUDOBODY -->
 
@@ -43,5 +74,7 @@
         
         
         <script src="scripts/display.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/boards.js"></script>
     </body>
 </html>

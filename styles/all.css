@@ -46,23 +46,26 @@ body{
 }
 
 
+
 /*---------Custom Scrollbar Styling---------*/
 ::-webkit-scrollbar{
-    width: 1vw;
-    background: #37acffd3;
-    border: 0.5px solid #000000;
-    border-radius: 2px;
+    width: 0.7vw;
+    background: #206adacb;
+    /* border: 0.5px solid #000000; */
+    /* border-radius: px; */
+    /* display: none; */
 }
+
 /*--------- Handle--------- */
 ::-webkit-scrollbar-thumb {
-    background: #094ca3b4;
-    border: 0.5px solid #06164d;
-    border-radius: 4px;
+    background: #3c71c0;
+    border: 0.5px solid #000000;
+    border-radius: 20px;
     background-clip: padding-box;
 }
 /*-----Handle on hover--------- */ 
 ::-webkit-scrollbar-thumb:hover {
-    background: #59738288; 
+    background: #065dcec4; 
 }
 
 
@@ -75,6 +78,7 @@ a{
 
 .header{
     background-color: rgba(0,0,0,0.3);
+    width: 100%;
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -85,7 +89,7 @@ a{
     font-family: "anton";
     letter-spacing: 1px;
     margin: 0 0 0 2%;
-    /* animation: slide linear ease-in; */
+    animation-name: slide;
 }
 
 .pseudobody{
@@ -175,11 +179,42 @@ p{
 
 
 @keyframes slide{
-    from{
+    0%{
         margin-left: -100%;
     }
-    to{
+    50%{
+        margin-left: 15%;
+    }
+    100%{
         margin-left: 2%;
     }
 }
 
+
+
+.btn:hover{
+    border: 1px solid black;
+    color: #000000;
+    animation: swipe 0.5s;
+    transition: 0.5s;
+    background-color: rgba(0,212,255,1);
+}
+
+
+@keyframes swipe {
+    from{
+        background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgb(0, 0, 0,1) 100%);
+    }
+    to{
+        background: linear-gradient(90deg, rgba(0,212,255,1) 25%, rgba(0,0,0,1) 25%);
+    }
+    to{
+        background: linear-gradient(90deg, rgba(0,212,255,1) 50%, rgba(0,0,0,1) 50%);
+    }
+    to{
+        background: linear-gradient(90deg, rgba(0,212,255,1) 75%, rgba(0,0,0,1) 75%);
+    }
+    to{
+        background: linear-gradient(90deg, rgba(0,212,255,1) 100%, rgba(0, 0, 0, 1) 100%);
+    }
+}

@@ -1,0 +1,21 @@
+.block1{
+    border: 2px solid black;
+    width: 98%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+}
+.block1 img{
+    width: 30%;
+}
+
+.card{
+    margin: auto;
+    width: 50%;
+    height: 90%;
+    background: #fdfdfd8f;
+}
+.card h1{
+    text-align: center;
+    margin-top: 2%;
+}

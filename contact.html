@@ -8,17 +8,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/all.css">
-        <link rel="stylesheet" href="syles/animations.css">
-        <link rel="stylesheet" href="syles/lists.css">
+        <link rel="stylesheet" href="styles/animations.css">
+        <link rel="stylesheet" href="styles/contact.css">
     </head>
     <body>
         <!-- PRELOADER -->
-        <div class="loaderbody">
+        <!-- <div class="loaderbody">
             <div id="loader">
                 <div id="shadow"></div>
                 <div id="box"></div>
               </div>
-        </div>
+        </div> -->
 
         <!-- HEADER -->
         <div class="header">
@@ -27,8 +27,22 @@
 
         <!-- MAIN WEBSITE BODY  -->
         <div class="pseudobody">
-
-
+            <div class="block1">
+                <img src="assets/contact2.png">
+                <div class="card">
+                    <h1>Your feedback matters!</h1>
+                    <form id="contact">
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name"><br>
+                        <label for="email">E-mail</label><br>
+                        <input type="text" id="email"><br>
+                        <label for="type">Feedback type</label><br>
+                        <input type="text" id="type"><br>
+                        <label for="description">Description</label><br>
+                        <input type="text" id="description">
+                    </form>
+                </div>
+            </div>
 
         </div> <!-- END OF PSEUDOBODY -->
 
@@ -41,9 +55,7 @@
             <a href="index.html">Home</a>
         </div>         <!-- END OF FOOTER -->
         
-        
-        <script src="scripts/display.js" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="scripts/lists.js"></script>
+        <script src="scripts/display.js"></script>
+        <script src="scripts/contact.js"></script>
     </body>
 </html>

@@ -13,12 +13,12 @@
     </head>
     <body>
         <!-- PRELOADER -->
-        <div class="loaderbody">
+        <!-- <div class="loaderbody">
             <div id="loader">
                 <div id="shadow"></div>
                 <div id="box"></div>
               </div>
-        </div>
+        </div> -->
 
         <!-- HEADER -->
         <div class="header">
@@ -29,42 +29,49 @@
         <div class="pseudobody">
             <h1>Just one last step before you're all set to go!</h1>
             <div class="block1">
-            <img src="assets/c14.png">
+                <div class="imgdiv">
+                    <img src="assets/c14.png">
+                </div>
                 <div class="card" id="card-login">
                     <center><p>Don't have an account?</p>
                     <button class="btn" onclick="toggle()">Sign Up</button></center>
                     <form id="login">
                         <label for="email">E-mail</label><br>
-                        <input type="text" id="email" placeholder="Enter Your E-mail" autocomplete="off"><br>
+                        <input type="text" id="email" placeholder="Enter Your E-mail" autocomplete="off" required><br>
                         <label for="password">Password</label><br>
-                        <input type="password" id="password" placeholder="Enter Your Password"  autocomplete="off">
+                        <input type="password" id="password" placeholder="Enter Your Password"  autocomplete="off" required>
                         <center><button type="submit" class="btn">Log In</button></center>
                     </form>
-                    <center>
-                        <p>
-                            Forgot your password?<br>
-                            <a href="#">
-                            Reset it now!
-                            </a>
-                        </p>
-                    </center>
+                    <div class="lmessage">
+                        <center>
+                            <p>
+                                Forgot your password?<br>
+                                <a href="#">
+                                Reset it now!
+                                </a>
+                            </p>
+                        </center>
+                    </div>
                 </div>
                 <div class="card" id="card-signup">
                     <center><p>Already have an account?</p>
                     <button class="btn" onclick="toggle()">Log In</button></center>
                     <form id="signup">
                         <label for="semail">E-mail</label><br>
-                        <input type="text" id="semail"  placeholder="Enter Your E-mail" autocomplete="off"><br>
+                        <input type="text" id="semail"  placeholder="Enter Your E-mail" autocomplete="off" required><br>
                         <label for="username">UserName</label><br>
-                        <input type="text" id="susername" placeholder="Enter Your Username" autocomplete="off"><br>
+                        <input type="text" id="susername" placeholder="Enter Your Username" autocomplete="off" required><br>
                         <label for="password">Password</label><br>
-                        <input type="password" id="spassword" placeholder="Enter Your Password" autocomplete="off">
+                        <input type="password" id="spassword" placeholder="Enter Your Password" autocomplete="off" required>
                         <label for="question">Security Question</label>
-                        <input type="text" id="question" placeholder="Enter security question for reseting password"  autocomplete="off">
+                        <input type="text" id="question" placeholder="Enter security question for reseting password"  autocomplete="off" required>
                         <label for="answer">Answer</label>
-                        <input type="text" id="answer" placeholder="Enter the answer for security question"  autocomplete="off">
+                        <input type="text" id="answer" placeholder="Enter the answer for security question"  autocomplete="off" required>
                         <center><button type="submit" class="btn">Sign Up</button></center>
                     </form>
+                    <div class="smessage">
+
+                    </div>
                 </div>           
             </div>
 
@@ -81,6 +88,7 @@
         </div>         <!-- END OF FOOTER -->
         
         <script src="scripts/display.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/login.js"></script>
     </body>
 </html>
