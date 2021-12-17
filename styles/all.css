@@ -49,7 +49,7 @@ body{
 
 /*---------Custom Scrollbar Styling---------*/
 ::-webkit-scrollbar{
-    width: 0.7vw;
+    width: 1.2vw;
     background: #206adacb;
     /* border: 0.5px solid #000000; */
     /* border-radius: px; */

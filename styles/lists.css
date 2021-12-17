@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+.pseudobody{
+    border: 2px solid black;
+    margin-left: 0;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 0.01fr 1.09fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+    min-height: 80vh;
+}
+.sidebar{
+    height: 100%;
+    width:40px;
+    background: rgba(0,0,0,0.5);
+}
+.block1{
+    border: 2px solid yellow;
+    display: flex;
+}
+.head{
+    border: 2px solid green;
+    height: max-content;
+}
+.adderblock{
+    border: 2px solid red;
+    margin-left: 12px;
+}
+.container{
+    border: 2px solid purple;
+    display: flex;
+}
+.card{
+    background-color: green;
+    margin-left: 12px;
+    width: 190px;
+}

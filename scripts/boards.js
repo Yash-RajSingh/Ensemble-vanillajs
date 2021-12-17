@@ -7,11 +7,9 @@ $(".iboard2").hover(function(){
   });
 
 
-
 // GETTING THE REQUIRED DOM COMPONENTS
 const welMsg = document.getElementById('name');
 const container = document.getElementById('container');
-
 
 
 //GETIING SESSION STORGAE ITEMS
@@ -34,7 +32,6 @@ const reupdate = () =>{
 }
 
 
-
 //Displaying Boards
 const displayBoards = () =>{
     const base = `https://ensemble-p1.herokuapp.com/boards/get_boards`;
@@ -51,10 +48,10 @@ const displayBoards = () =>{
                 var curr = bdata[i];
                 var jcurr = Array.from(curr);
                 container.innerHTML += `
-                <div class="card" id="${jcurr[3]}">
+                <div class="card" id="${jcurr[3]}" onclick="OpenBoard('${jcurr[3]}')">
                 <b>Title - ${jcurr[1]}</b><br>
                 Description - ${jcurr[2]}<br>
-                <button class="btn" onclick="update('${jcurr[3]}')">Edit</button>
+                <button class="btn" onclick="startUpdate('${jcurr[3]}')">Edit</button>
                 <button class="btn" onclick="remove('${jcurr[3]}')">Delete</button>
                 </div>
                 `
@@ -64,7 +61,6 @@ const displayBoards = () =>{
 }
 
 displayBoards();
-
 
 
 // INSERTING BOARD 
@@ -91,7 +87,6 @@ form.addEventListener('submit', (e) => {
 //SETTING UP REMOVE AND UPDATE FUNCTIONALITY
 
 //DELETING BOARDS
-
 const remove = (id) => {
     const buid = id;
     const deleteBoard = () =>{
@@ -110,5 +105,44 @@ const remove = (id) => {
     reupdate();
     
 }
-const startUpdate = () => {
+
+const updater = document.getElementById('updata');
+//UPLOADING BOARDS
+const startUpdate = (id) => {
+    updater.style.display = "block";
+    updater.style.WebkitAnimation = "slider 2s ease-in-out";
+    var buid = id;
+    console.log("init=",buid);
+    $('#uboard').submit(function (e) {
+        e.preventDefault();
+        const uname = $('#uname').val();
+        const udesc = $('#udesc').val();
+        console.log(uname,udesc);
+        const updateBoard = () =>{
+            const base = `https://ensemble-p1.herokuapp.com/boards/update_board`;
+            const req = `?buid=${buid}&token=${token}&title=${uname}&description=${udesc}`;
+            const query = `${base}${req}`;
+            const up = async () =>{
+                const response = await fetch(query, {
+                    method: 'POST'
+                    });
+                    const data = await response.json();
+                    console.log(data.message);
+                }
+                up();
+        }
+        updateBoard();
+        reupdate();
+        updater.style.display = "none";
+
+    })
+    console.log("fin=",buid);
+    
+}
+
+
+//OPEN BOARD FUNCTIONING
+const OpenBoard = (id) => {
+    sessionStorage.setItem("currboard", `${id}`);
+    window.location.href = "./lists.html";
 }
