@@ -38,6 +38,14 @@
     font-family: 'rjs';
     src: url(fonts/Rajdhani-Bold.ttf);
 }
+@font-face {
+    font-family: 'script';
+    src: url(fonts/Script.ttf);
+}
+@font-face {
+    font-family: 'sigma';
+    src: url(fonts/Signika.ttf);
+}
 
 body{
     background: linear-gradient(to top right,#ffffffa4 1%, #37acffd3 55%, #00285c 125%)fixed;

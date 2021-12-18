@@ -27,8 +27,8 @@
 
         <!-- MAIN WEBSITE BODY  -->
         <div class="pseudobody">
-            <h1>Just one last step before you're all set to go!</h1>
-            <div class="block1">
+            <h1 id="h1">Just one last step before you're all set to go!</h1>
+            <div class="block1" id="block1">
                 <div class="imgdiv">
                     <img src="assets/c14.png">
                 </div>
@@ -46,9 +46,9 @@
                         <center>
                             <p>
                                 Forgot your password?<br>
-                                <a href="#">
+                                <button class="btn" onclick="forgettoggle()">
                                 Reset it now!
-                                </a>
+                                </button>
                             </p>
                         </center>
                     </div>
@@ -66,7 +66,7 @@
                         <label for="question">Security Question</label>
                         <input type="text" id="question" placeholder="Enter security question for reseting password"  autocomplete="off" required>
                         <label for="answer">Answer</label>
-                        <input type="text" id="answer" placeholder="Enter the answer for security question"  autocomplete="off" required>
+                        <input type="password" id="answer" placeholder="Enter the answer for security question"  autocomplete="off" required>
                         <center><button type="submit" class="btn">Sign Up</button></center>
                     </form>
                     <div class="smessage">
@@ -75,15 +75,35 @@
                 </div>           
             </div>
 
+            <div class="forgetbody" id="forgetbody">
+                <div class="afbody">
+                    <div class="for1">
+                        <img src="assets/for1.png" class="forimg">
+                    </div>
+                    <div class="forcard">
+                        <h2>Let's start with finding your account</h2>
+                        <form id="formforget">
+                            <label for="femail">Enter email</label>
+                            <input type="text" id="femail" autocomplete="off" placeholder="Enter your email">
+                            <center><button type="submit" class="btn" id="bb">Find account</button></center>
+                        </form>
+                        <div id="fmsg">
 
+                        </div>
+                        <div id="response">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div> <!-- END OF PSEUDOBODY -->
 
         <!-- FOOTER -->
         <div class="footer">
             <a href="https://github.com/Yash-RajSingh/Ensemble">© Team-Ensemble</a>
-            <a href="">Privacy Policy</a>
+            <a href="about.html#privacy">Privacy Policy</a>
             <a href="about.html">About</a>
-            <a href="">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
             <a href="index.html">Home</a>
         </div>         <!-- END OF FOOTER -->
         

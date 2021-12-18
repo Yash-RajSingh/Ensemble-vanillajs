@@ -2,7 +2,7 @@
     margin: 0;
 }
 .pseudobody{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin-left: 0;
     display: grid; 
     grid-auto-columns: 1fr; 
@@ -15,27 +15,83 @@
 }
 .sidebar{
     height: 100%;
-    width:40px;
-    background: rgba(0,0,0,0.5);
+    width:15px;
 }
+.sidebar img{
+    padding: 5px;
+    width: 70%;
+}
+
 .block1{
-    border: 2px solid yellow;
     display: flex;
 }
 .head{
-    border: 2px solid green;
     height: max-content;
 }
 .adderblock{
-    border: 2px solid red;
+    background: #165db9ce;
+    height: max-content;
+    box-shadow: 2px 2px black;
+    border-radius: 7px;
+    padding: 5px;
     margin-left: 12px;
 }
+.adderblock input{
+    width: 80%;
+    background: #ffffffec;
+    border-radius: 5px;
+    height: 18px;
+    border: 1px solid black;
+}
 .container{
-    border: 2px solid purple;
     display: flex;
 }
 .card{
-    background-color: green;
+    background-color: #2575df;
+    box-shadow: 2px 2px black;
     margin-left: 12px;
-    width: 190px;
+    border-radius: 10px 10px 5px 5px;
+    padding: 7px 5px;
+    width: 180px;
+    height: max-content;
+}
+
+
+.ulist{
+    background: rgb(255, 255, 255);
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 20px 5px 20px 5px;
+    margin-left: 80%;
+    display: none;
+}
+
+@keyframes slider {
+    from{
+        margin-left: 2%;
+    }
+    to{
+        margin-left: 80%;
+    }
+}
+
+
+
+.btn{
+    background: #2e2c2cd5;
+    color: white;
+    border: 0px;
+    margin-top: 2%;
+    padding:  2px 10px;
+    border-radius: 10px;
+}
+
+.subcard{
+    background-color: rgba(19, 167, 147, 0.562);
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+    margin-top: 3.5%;
+    color: black;
+    font-size: 13px;
+    padding: 5px;
 }

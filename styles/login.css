@@ -83,6 +83,77 @@ input{
     background: var(--btn);
     color: white;
     border: 0px;
+    margin-top: 2%;
     padding:  7px 10px;
+    border-radius: 10px;
+}
+
+.smessage{
+    margin-top: 2%;
+    font-family: 'dancing';
+    font-size: 25px;
+}
+
+
+/* STYLING FOR FORGET PASSWORD PREVIEW */
+.afbody{
+    /* border: 2px solid black; */
+    min-height: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+.for1{
+    /* border: 2px solid rgb(128, 10, 10); */
+    width: 35%;
+}
+.forimg{
+    width: 100%;
+}
+
+.forcard{
+    background: rgba(235, 235, 235, 0.774);
+    padding: 20px;
+    border-radius: 30px 10px 30px 10px;
+    height: max-content;
+    margin: auto 0;
+}
+.forcard h2{
+    margin-top: 3%;
+}
+#formforget{
+    margin-top: 5%;
+    font-size: 23px;
+    font-family: 'sigma';
+}
+#bb{
+    margin-top: 4%;
+}
+#formforget input{
+    height: 23px;
+    padding: 2px;
+    border: 2px solid black;
+}
+.forgetbody{
+    display: none;
+}
+#fmsg{
+    margin-top: 5%;
+    margin-left: 4%;
+    text-align: center;
+}
+
+#fanswer{
+    height: 23px;
+    padding: 2px;
+    border: 2px solid black;
+}
+
+.btn2{
+    background: var(--btn);
+    color: white;
+    border: 0px;
+    margin-top: 5%;
+    font-size: 17px;
+    padding:  3px 10px;
     border-radius: 10px;
 }

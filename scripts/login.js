@@ -34,7 +34,7 @@ signup.addEventListener('submit', (e) =>{
   const ans = document.getElementById('answer').value;
   const answer = ans.toUpperCase();
   console.log(answer);
-  const base = `https://ensemble-p1.herokuapp.com/authentication/register`;
+  const base = `https://ensemble-p2.herokuapp.com/authentication/register`;
   const req = `?username=${sname}&email=${email}&password=${password}&sec_question=${question}&sec_answer=${answer}`;
   const query = `${base}${req}`;
   const Sign = async () => {
@@ -54,7 +54,7 @@ login.addEventListener('submit', (e) =>{
     e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const base = `https://ensemble-p1.herokuapp.com/authentication/login`;
+    const base = `https://ensemble-p2.herokuapp.com/authentication/login`;
     const req = `?email=${email}&password=${password}`;
     const query = `${base}${req}`;
     const logy = async () => {
@@ -74,3 +74,113 @@ login.addEventListener('submit', (e) =>{
     logy();
 
 })
+
+
+// ADDING FORGET PASSWORD FUNCTIONALITY
+
+//TOGGLING VISIBILITY FOR FORGETPASSWORD FORM
+const hmsg = document.getElementById('h1');
+const forgetBlock = document.getElementById('forgetbody');
+const block1 = document.getElementById('block1');
+const forgettoggle = () =>{
+  hmsg.style.display = "none";
+  block1.style.display = "none";
+  forgetBlock.style.display = "block";
+}
+
+//FINDING EMAIL
+const forgetform = document.getElementById('formforget');
+const fmsg = document.getElementById('fmsg');
+forgetform.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    const femail = $('#femail').val();
+    sessionStorage.setItem("femail", `${femail}`);
+    console.log("checking email");
+    const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_validate`;
+    const req = `?email=${femail}`;
+    const query = `${base}${req}`;
+    const checkEmail = async () => {
+      const response = await fetch(query, {
+        method: 'POST'
+      });
+      const data = await response.json();
+      if(data.status==200){
+        fmsg.innerHTML = `
+        <div>
+        <h4>${data.sec_question}</h4>
+        <form class="forans">
+        <label for="fanswer">Enter answer</label>
+        <input type="text" id="fanswer" placeholder="Enter the answer of the security question">
+        <button type="submit" class="btn" >Submit answer</button>
+        </form>
+        </div>
+        `
+      }
+      else{
+        fmsg.innerText = `${data.message}`;
+      }
+    }
+    checkEmail();
+})
+console.log($('.forans'));
+//VALIDAING SECURITY ANSWER
+const resField = document.getElementById('response');
+const checkAns = () => {
+      const answer = $('#fanswer').val();
+      var femail = sessionStorage.getItem('femail');
+      console.log("checking ans");
+      const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update`;
+      const req = `?email=${femail}&sec_answer=${answer}`;
+      const query = `${base}${req}`;
+      const getAns = async () => {
+      const response = await fetch(query, {
+        method: 'POST'
+      });
+        const data = await response.json();
+        if(data.status==200){
+          fmsg.innerHTML = `
+          <div id="fresponse">
+          <h4>${data.message}</h4>
+          <form class="upPass">
+          <label for="fpass">Enter password</label>
+          <input type="password" id="fpass" placeholder="Enter the new password">
+          <a href="#" class="btn" onclick="upPassword()">Submit answer</a>
+          </form>
+          </div>
+          `;
+          resField.innerText = ``;
+        }
+        else{
+          resField.innerText = `Incorrect answer. Please try again`;
+        }
+      }
+      getAns();
+}
+
+//UPDATING PASSWORD
+const upPassword = () => {
+  const fpass = $('#fpass').val();
+  console.log(fpass)
+  var femail = sessionStorage.getItem('femail');
+  console.log(femail);
+  const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update_password`;
+  const req = `?email=${femail}&password=${fpass}`;
+  const query = `${base}${req}`;
+  const updatePassword = async () => {
+  const response = await fetch(query, {
+    method: 'POST'
+  });
+    const data = await response.json();
+    console.log(data);
+    if(data.status==200){
+      fmsg.innerHTML = `${data.message}<br> Try logging in now<br><br>
+      <a href="./login.html" class="btn2">Log in</a>
+      `;
+      resField.innerText = ``;
+    }
+    else{
+      resField.innerText = `${data.message}`;
+    }
+  }
+  updatePassword();
+}

@@ -1,23 +1,76 @@
 Register API:-
-    Base URL:- https://ensemble-p1.herokuapp.com/authentication/register
+    Base URL:- https://ensemble-p2.herokuapp.com/authentication/register
     arguements:- username, email,password,sec_question,sec_answer.
     response:- message, status.
+
 Login API:-
-    Base URL:- https://ensemble-p1.herokuapp.com/authentication/login
+    Base URL:- https://ensemble-p2.herokuapp.com/authentication/login
     arguements:- email,password.
     response:- message, status, token, username, unique user ID.
 
-Get boards API:-
-    Base URL:- https://ensemble-p1.herokuapp.com/boards/get_boards
-    arguements:- UUID, token
-    response:- 
-Insert boards API:-
-    Base URL:- https://ensemble-p1.herokuapp.com/boards/insert_board
-    arguements:- UUID, title, description, token
-Delete board:-
-    Base URL:- https://ensemble-p1.herokuapp.com/boards/delete_board
-    method:- Delete
-    arguements:- buid, token
-Update board:- 
-    Base URL:- https://ensemble-p1.herokuapp.com/boards/update_board
-    arguements:- buid, title, description
+For boards:- 
+    Get boards API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/boards/get_boards
+        arguements:- UUID, token
+        response:- 
+
+    Insert boards API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/boards/insert_board
+        arguements:- UUID, title, description, token
+    Delete board:-
+
+        Base URL:- https://ensemble-p2.herokuapp.com/boards/delete_board
+        method:- Delete
+        arguements:- buid, token
+
+    Update board:- 
+        Base URL:- https://ensemble-p2.herokuapp.com/boards/update_board
+        arguements:- buid, title, description,token
+
+For Lists:-
+    Get lists API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/lists/get_all_lists
+        arguements:- Board_fid, token
+
+    Insert Lists API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/lists/insert_list
+        arguements:- Name, Board_fid, token
+
+    Delete lists API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/lists/delete_list
+        arguements:- luid, token
+
+    Update lists API:- 
+        Base URL:- https://ensemble-p2.herokuapp.com/lists/update_list
+        arguements:- name,luid,token
+    
+For tasks:-
+    Get tasks API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/tasks/get_tasks
+        arguements:- list_fid,token
+
+    Insert tasks API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/tasks/insert_task
+        arguements:- task_name,task_descrription,Task_completion, Due_date_time,list_fid,token
+
+    Delete tasks API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/tasks/delete_task
+        arguements:- tuid,token
+        method:- DELETE
+
+    Update Tasks API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/tasks/update_task
+        arguements:- task_name,task_descrription,Task_completion, Due_date_time,tuid,token
+
+
+
+FOR FORGET PASSWORD FUNCTIONS:-
+    Email validaation API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/forgotpassword/forgot_validate
+        arguements:- email
+    Security answer validaation API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update
+        arguements:- email, sec_answer
+    Password update API:-
+        Base URL:- https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update_password
+        arguements:- email, password

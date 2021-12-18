@@ -34,7 +34,7 @@ const reupdate = () =>{
 
 //Displaying Boards
 const displayBoards = () =>{
-    const base = `https://ensemble-p1.herokuapp.com/boards/get_boards`;
+    const base = `https://ensemble-p2.herokuapp.com/boards/get_all_boards`;
     const req = `?uid=${uid}&token=${token}`;
     const query = `${base}${req}`;
     const getBoards = async () =>{
@@ -48,9 +48,10 @@ const displayBoards = () =>{
                 var curr = bdata[i];
                 var jcurr = Array.from(curr);
                 container.innerHTML += `
-                <div class="card" id="${jcurr[3]}" onclick="OpenBoard('${jcurr[3]}')">
+                <div class="card" id="${jcurr[3]}">
                 <b>Title - ${jcurr[1]}</b><br>
                 Description - ${jcurr[2]}<br>
+                <button class="btn" onclick="OpenBoard('${jcurr[3]}')">Open</button>
                 <button class="btn" onclick="startUpdate('${jcurr[3]}')">Edit</button>
                 <button class="btn" onclick="remove('${jcurr[3]}')">Delete</button>
                 </div>
@@ -69,7 +70,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const title = document.getElementById("bname").value;
     const descp = document.getElementById("desc").value;
-    const base = `https://ensemble-p1.herokuapp.com/boards/insert_board`;
+    const base = `https://ensemble-p2.herokuapp.com/boards/insert_board`;
     const req = `?title=${title}&description=${descp}&creator_id=${uid}&token=${token}`;
     const query = `${base}${req}`;
     const insertBoards = async () => {
@@ -90,7 +91,7 @@ form.addEventListener('submit', (e) => {
 const remove = (id) => {
     const buid = id;
     const deleteBoard = () =>{
-        const base = `https://ensemble-p1.herokuapp.com/boards/delete_board`;
+        const base = `https://ensemble-p2.herokuapp.com/boards/delete_board`;
         const req = `?buid=${buid}&token=${token}`;
         const query = `${base}${req}`;
         const del = async () =>{
@@ -119,7 +120,7 @@ const startUpdate = (id) => {
         const udesc = $('#udesc').val();
         console.log(uname,udesc);
         const updateBoard = () =>{
-            const base = `https://ensemble-p1.herokuapp.com/boards/update_board`;
+            const base = `https://ensemble-p2.herokuapp.com/boards/update_board`;
             const req = `?buid=${buid}&token=${token}&title=${uname}&description=${udesc}`;
             const query = `${base}${req}`;
             const up = async () =>{
@@ -136,8 +137,6 @@ const startUpdate = (id) => {
         updater.style.display = "none";
 
     })
-    console.log("fin=",buid);
-    
 }
 
 
