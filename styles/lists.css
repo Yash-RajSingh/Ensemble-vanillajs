@@ -78,7 +78,7 @@
 
 
 .btn{
-    background: #2e2c2cd5;
+    background: #1a1919de;
     color: white;
     border: 0px;
     margin-top: 2%;
@@ -94,4 +94,11 @@
     color: black;
     font-size: 13px;
     padding: 5px;
+}
+#btn1{
+    margin: 1% 4% 0 0;
+    border: 2px solid white;
+    font-size: 17px;
+    padding: 5px 15px;
+    height: max-content;
 }

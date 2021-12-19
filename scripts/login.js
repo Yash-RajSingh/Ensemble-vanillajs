@@ -156,20 +156,21 @@ ansresp.addEventListener('submit', (e) => {
 
 
 //UPDATING PASSWORD
-const upPassword = () => {
+const passform = document.getElementById('upPass');
+$('#upPass').submit(function (e){
+  console.log("entered 1")
+  e.preventDefault();
+  console.log("entered 2")
   const fpass = $('#fpass').val();
-  console.log(fpass)
   var femail = sessionStorage.getItem('femail');
-  console.log(femail);
   const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update_password`;
   const req = `?email=${femail}&password=${fpass}`;
   const query = `${base}${req}`;
   const updatePassword = async () => {
-  const response = await fetch(query, {
-    method: 'POST'
-  });
+    const response = await fetch(query, {
+      method: 'POST'
+    });
     const data = await response.json();
-    console.log(data);
     if(data.status==200){
       resField2.style.display = "none";
       fmsg.style.display = "block";
@@ -183,4 +184,4 @@ const upPassword = () => {
     }
   }
   updatePassword();
-}
+})

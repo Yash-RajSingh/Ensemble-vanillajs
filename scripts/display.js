@@ -7,3 +7,9 @@ function Preloader() {
 function stopPreloader() {
   clearTimeout(Preloader);
 }
+
+//ADDING LOG OUT FUNCTIONALITY
+const logOut = () => {
+  sessionStorage.clear();
+  window.location.href="./login.html";
+}

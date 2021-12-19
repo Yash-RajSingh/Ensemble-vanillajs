@@ -137,4 +137,10 @@ li{
     padding: 10px;
     width: 15%;
 }
-
+#btn1{
+    margin: 1% 4% 0 0;
+    border: 2px solid white;
+    font-size: 17px;
+    padding: 5px 15px;
+    height: max-content;
+}

@@ -163,7 +163,7 @@ const add = (id) =>{
         }else if(tstatus==3){
             var col = `Completed`;
         }
-        activelist.innerHTML += `<div class="subcard">${tname}<br> ${tdesc}<br>Due: ${tdate} ${col}</div>`
+        activelist.innerHTML += `<div class="subcard"><b>${tname}</b><br> ${tdesc}<br><b>Due: ${tdate}</b> ${col}</div>`
         const insertTask = () =>{
         const base = `https://ensemble-p2.herokuapp.com/tasks/insert_task`;
         const req = `?task_name=${tname}&task_description=${tdesc}&Task_completion=${tstatus}&Due_date_time=${tdate}&list_fid=${lid}&token=${token}`;
@@ -211,7 +211,7 @@ const Expand = (id) =>{
                 }
                 console.log(col);
                 activelist.innerHTML += `
-                <div class="subcard">${activeData[1]}<br> ${activeData[2]}<br>Due: ${activeData[4]} ${col}</div>
+                <div class="subcard"><b>${activeData[1]}</b><br> ${activeData[2]}<br><b>Due: ${activeData[4]}</b> ${col}</div>
                 `
             }
     }

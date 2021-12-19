@@ -1,6 +1,6 @@
 .block1{
-    border: 2px solid black;
-    width: 98%;
+    /* border: 2px solid black; */
+    width: 95vw;
     height: 70vh;
     display: flex;
     justify-content: space-around;
@@ -11,11 +11,37 @@
 
 .card{
     margin: auto;
-    width: 50%;
+    width: 45%;
     height: 90%;
     background: #fdfdfd8f;
+    border-radius: 50px 15px 50px 15px;
+    box-shadow: 3px 3px black;
+}
+.card:hover{
+    background: #fdfdfdc0;
 }
 .card h1{
     text-align: center;
     margin-top: 2%;
+}
+#contact{
+    margin-left: 7%;
+    font-size: 25px;
+}
+
+input{
+    width: 90%;
+    height: 30px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.btn{
+    background: var(--btn);
+    color: white;
+    border: 0px;
+    margin-top: 1.5%;
+    padding:  8px 10px;
+    border-radius: 10px;
 }
