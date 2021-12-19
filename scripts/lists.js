@@ -217,3 +217,109 @@ const Expand = (id) =>{
     }
     getTasks();
 }
+
+
+
+
+///ADDING MEMBERS TO WORKSPACE
+const sidebar = document.getElementById('sidebar');
+const expand = document.getElementById('expand');
+const memlist = document.getElementById('mems');
+const memaddBlock = document.getElementById('memberadder');
+const memAddForm = document.getElementById('addmem');
+const memresp = document.getElementById('memresp');
+const memberBlock = document.getElementById('members');
+
+// TOGGLING SIDEBAR
+expand.addEventListener('click', ()=>{
+    if(sidebar.style.width == "30px"){
+        sidebar.style.WebkitAnimation = "slide 1s ease-out";
+        memlist.style.display = "block";
+        memaddBlock.style.display = "block";
+        memresp.style.display = "block";
+        memberBlock.style.display = "block";
+        sidebar.style.width = "200px";
+    }else {
+        sidebar.style.width = "30px";
+        sidebar.style.WebkitAnimation = "rslide 1s ease-in";
+        memlist.style.display = "none";
+        memaddBlock.style.display = "none";
+        memberBlock.style.display = "none";
+        memresp.style.display = "none";
+    }
+})
+
+
+//ADDING MEMBERS
+memAddForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    memlist.style.display = "block";
+    const memail = $('#memail').val();
+    const base = `https://ensemble-p2.herokuapp.com/members/add_member`;
+    const req = `?buid=${bid}&email=${memail}&token=${token}`;
+    const query = `${base}${req}`;
+    const addMembers = async () =>{
+        const response = await fetch(query, {
+            method: 'POST'
+        });
+        const data = await response.json();
+        console.log(data);
+        memresp.innerText = `${data.message}`;
+    }
+    addMembers();
+})
+
+
+memlist.addEventListener('click', (e) =>{
+    e.preventDefault();
+    const base = `https://ensemble-p2.herokuapp.com/members/get_members`;
+    const req = `?buid=${bid}&token=${token}`;
+    const query = `${base}${req}`;
+    const getMembers = async () =>{
+        const response = await fetch(query, {
+            method: 'POST'
+        });
+        const data = await response.json();
+        let memcount = data.members.length;
+        memberBlock.innerHTML = ``;
+        memlist.style.display = "none";
+        for(var t=0; t<memcount; t++ ){
+            let members = data.members[t]
+            console.log(members[1]);
+            console.log(members[2]);
+            console.log(members[3]);
+            if(members[3]=="creator"){
+                memberBlock.innerHTML += `<div id="${members[0]}" class="memcard2">
+            <b>${members[1]}<b> <br>
+            Role: ${members[3]} 
+            </div>`
+            }else{
+                memberBlock.innerHTML += `<div id="${members[0]}" class="memcard2">
+                <b>${members[1]}<b> <br>
+                Role: ${members[3]} &emsp; <button class="btn3" onclick="removeMember('${members[0]}')">Remove</button>
+                </div>`
+            }
+        }
+        // memlist.innerText = `${data.message}`;
+    }
+    getMembers();
+})
+
+const removeMember = (id) =>{
+    const iid = id;
+    const curMember = $(`#${iid}`);
+    console.log(curMember);
+    const base = `https://ensemble-p2.herokuapp.com/members/delete_member`;
+    const req = `?buid=${bid}&uid=${iid}&token=${token}`;
+    const query = `${base}${req}`;
+    const delMembers = async () =>{
+        const response = await fetch(query, {
+            method: 'DELETE'
+        });
+        const data = await response.json();
+        memresp.innerHTML = `${data.message}` 
+        console.log(data.message);
+    }
+    delMembers();
+    curMember.remove();
+}

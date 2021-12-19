@@ -12,8 +12,8 @@
 .card{
     margin: auto;
     width: 45%;
-    height: 90%;
     background: #fdfdfd8f;
+    padding-bottom: 15px;
     border-radius: 50px 15px 50px 15px;
     box-shadow: 3px 3px black;
 }
@@ -44,4 +44,10 @@ input{
     margin-top: 1.5%;
     padding:  8px 10px;
     border-radius: 10px;
+}
+#resp{
+    text-align: center;
+    margin-top: 2%;
+    font-size: 25px;
+    font-family: 'sigma';
 }

@@ -43,6 +43,7 @@ const displayBoards = () =>{
             });
             const data = await response.json();
             const bdata = data.data;
+            console.log(bdata);
             container.innerHTML = ``;
             for( var i in bdata){
                 var curr = bdata[i];
