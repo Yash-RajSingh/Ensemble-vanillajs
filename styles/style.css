@@ -57,7 +57,9 @@
     width: 95%;
 }
 .block2 img{
-    width: 60%;
+    width: 80%;
+    /* border: 3px solid black; */
+    border-radius: 10px;
 }
 .block2 p{
     margin: 2% 0 0 3%;
