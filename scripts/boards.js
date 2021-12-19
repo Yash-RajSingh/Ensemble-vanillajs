@@ -50,8 +50,8 @@ const displayBoards = () =>{
                 var jcurr = Array.from(curr);
                 container.innerHTML += `
                 <div class="card" id="${jcurr[3]}">
-                <b>Title - ${jcurr[1]}</b><br>
-                Description - ${jcurr[2]}<br>
+                <b>${jcurr[1]}</b><br>
+                ${jcurr[2]}<br>
                 <button class="btn" onclick="OpenBoard('${jcurr[3]}')">Open</button>
                 <button class="btn" onclick="startUpdate('${jcurr[3]}')">Edit</button>
                 <button class="btn" onclick="remove('${jcurr[3]}')">Delete</button>
