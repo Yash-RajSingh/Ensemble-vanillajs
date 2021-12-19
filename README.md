@@ -1,4 +1,6 @@
-<h1 align="center">Ensemble</h1>
+
+
+<h1 align="center"><img src="https://user-images.githubusercontent.com/85413348/146673794-213cd915-7521-444a-a0e6-ea96e87d805c.png" height = "100" width="100" align="center"><br>Ensemble</h1>
 
 ![](https://img.shields.io/badge/-%C2%A9%20Team--Ensemble-%231b4e71)
 ### A better way to handle group projects
