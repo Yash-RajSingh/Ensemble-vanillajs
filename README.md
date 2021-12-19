@@ -1,5 +1,6 @@
-# Ensemble
----
+<h1 align="center">Ensemble</h1>
+
+![](https://img.shields.io/badge/-%C2%A9%20Team--Ensemble-%231b4e71)
 ### A better way to handle group projects
 ---
 ## Tech-Stack used :
@@ -16,8 +17,8 @@
   ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
   
 ---
-## Contributers
-* Responsible for creating the API backend
+## Contributors
+* Responsible for creating the APIs for the backend
 
   [Yashneet Kalra](https://github.com/yashneet-kalra) 
   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;
@@ -32,4 +33,11 @@
 * Add tasks to those lists to plan out your setps and monitor your progress
 * Invite and add multiple people to your workspaces to work collaboratively
 ---
-## Demosntration
+## Demonstration
+
+
+https://user-images.githubusercontent.com/85413348/146673557-51e95a6e-3ed0-4317-a084-80e7638efd84.mp4
+
+
+---
+> Team Ensemble:- [Yash Raj Singh](https://github.com/Yash-RajSingh) &nbsp;   &nbsp; [Yashneet Kalra](https://github.com/yashneet-kalra) &nbsp;   &nbsp; [Sohil Khanduja](https://github.com/sohilkhanduja)
