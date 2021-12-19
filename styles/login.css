@@ -157,3 +157,19 @@ input{
     padding:  3px 10px;
     border-radius: 10px;
 }
+
+#forans{
+    display: none;
+}
+#response{
+    text-align: center;
+    margin-top: 3%;
+}
+#btn3{
+    font-size: 13px;
+    margin-top: 5%;
+    padding: 5px 12px;
+}
+#fresponse{
+    display: none;
+}

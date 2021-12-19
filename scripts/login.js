@@ -4,25 +4,26 @@ function toggle() {
   var scard = document.getElementById("card-signup");
   var head = document.querySelector('h1');
   if (scard.style.display === "none") {
-      lcard.style.display = "none";
-      scard.style.display = "block";
-      head.textContent = "Just one last step before you're all set to go!";
-    } else {
-      lcard.style.display = "block";
-      scard.style.display = "none";
-      head.textContent = 'Welcome back to Ensemble!';
-    }
+    lcard.style.display = "none";
+    scard.style.display = "block";
+    head.textContent = "Just one last step before you're all set to go!";
+  } else {
+    lcard.style.display = "block";
+    scard.style.display = "none";
+    head.textContent = 'Welcome back to Ensemble!';
+  }
 };
-    
-    
-    
-    
+
+
+
+
 //PICKING UP RESPECTIVE DOM ELEMENTS
 const signup = document.getElementById('signup');
 const login = document.getElementById('login');
 const lmsg = document.querySelector('.lmessage');
 const smsg = document.querySelector('.smessage');
-    
+const ansresp = document.getElementById('forans');
+
 
 
 signup.addEventListener('submit', (e) =>{
@@ -76,6 +77,11 @@ login.addEventListener('submit', (e) =>{
 })
 
 
+
+
+
+
+
 // ADDING FORGET PASSWORD FUNCTIONALITY
 
 //TOGGLING VISIBILITY FOR FORGETPASSWORD FORM
@@ -95,7 +101,6 @@ forgetform.addEventListener('submit', (e) =>{
     e.preventDefault();
     const femail = $('#femail').val();
     sessionStorage.setItem("femail", `${femail}`);
-    console.log("checking email");
     const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_validate`;
     const req = `?email=${femail}`;
     const query = `${base}${req}`;
@@ -104,17 +109,11 @@ forgetform.addEventListener('submit', (e) =>{
         method: 'POST'
       });
       const data = await response.json();
+      console.log(data);
       if(data.status==200){
-        fmsg.innerHTML = `
-        <div>
-        <h4>${data.sec_question}</h4>
-        <form class="forans">
-        <label for="fanswer">Enter answer</label>
-        <input type="text" id="fanswer" placeholder="Enter the answer of the security question">
-        <button type="submit" class="btn" >Submit answer</button>
-        </form>
-        </div>
-        `
+        console.log("proceeding");
+        fmsg.innerHTML = `${data.sec_question}`
+        ansresp.style.display = "block";
       }
       else{
         fmsg.innerText = `${data.message}`;
@@ -122,40 +121,39 @@ forgetform.addEventListener('submit', (e) =>{
     }
     checkEmail();
 })
-console.log($('.forans'));
+
+
+
+
 //VALIDAING SECURITY ANSWER
 const resField = document.getElementById('response');
-const checkAns = () => {
-      const answer = $('#fanswer').val();
-      var femail = sessionStorage.getItem('femail');
-      console.log("checking ans");
-      const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update`;
-      const req = `?email=${femail}&sec_answer=${answer}`;
-      const query = `${base}${req}`;
-      const getAns = async () => {
-      const response = await fetch(query, {
-        method: 'POST'
-      });
-        const data = await response.json();
-        if(data.status==200){
-          fmsg.innerHTML = `
-          <div id="fresponse">
-          <h4>${data.message}</h4>
-          <form class="upPass">
-          <label for="fpass">Enter password</label>
-          <input type="password" id="fpass" placeholder="Enter the new password">
-          <a href="#" class="btn" onclick="upPassword()">Submit answer</a>
-          </form>
-          </div>
-          `;
-          resField.innerText = ``;
-        }
-        else{
-          resField.innerText = `Incorrect answer. Please try again`;
-        }
-      }
-      getAns();
-}
+const resField2 = document.getElementById('fresponse');
+ansresp.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const answer = $('#fanswer').val();
+  var femail = sessionStorage.getItem('femail');
+  console.log("checking ans");
+  const base = `https://ensemble-p2.herokuapp.com/forgotpassword/forgot_update`;
+  const req = `?email=${femail}&sec_answer=${answer}`;
+  const query = `${base}${req}`;
+  const getAns = async () => {
+  const response = await fetch(query, {
+    method: 'POST'
+  });
+    const data = await response.json();
+    if(data.status==200){
+      ansresp.style.display = "none";
+      fmsg.style.display = "none";
+      resField2.style.display = "block";
+      resField.innerHTML = `${data.message}`;
+    }
+    else{
+      resField.innerText = `Incorrect answer. Please try again`;
+    }
+  }
+  getAns();
+})
+
 
 //UPDATING PASSWORD
 const upPassword = () => {
@@ -173,6 +171,8 @@ const upPassword = () => {
     const data = await response.json();
     console.log(data);
     if(data.status==200){
+      resField2.style.display = "none";
+      fmsg.style.display = "block";
       fmsg.innerHTML = `${data.message}<br> Try logging in now<br><br>
       <a href="./login.html" class="btn2">Log in</a>
       `;
