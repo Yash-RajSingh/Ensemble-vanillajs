@@ -37,7 +37,7 @@ const displayLists = () =>{
                 var jcurrl = Array.from(currl);
                 contain.innerHTML += `
                 <div class="card" id="${jcurrl[3]}">
-                <b>Name - ${jcurrl[1]}</b><br>
+                <b> ${jcurrl[1]}</b><br>
                 <button class="btn" onclick="startUpdate('${jcurrl[3]}')">Edit</button>
                 <button class="btn" onclick="remove('${jcurrl[3]}')">Delete</button>
                 <button class="btn" onclick="Addtask('${jcurrl[3]}')">Task +</button>
