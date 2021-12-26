@@ -34,11 +34,6 @@
 * Add multiple lists to your workspaces to monitor different projects
 * Add tasks to those lists to plan out your setps and monitor your progress
 * Invite and add multiple people to your workspaces to work collaboratively
----
-## Demonstration
-
-
-https://user-images.githubusercontent.com/85413348/146673557-51e95a6e-3ed0-4317-a084-80e7638efd84.mp4
 
 
 ---
