@@ -35,7 +35,7 @@ signup.addEventListener('submit', (e) =>{
   const ans = document.getElementById('answer').value;
   const answer = ans.toUpperCase();
   console.log(answer);
-  const base = `https://ensemble-p2.herokuapp.com/authentication/register`;
+  const base = `https://ensemble-apis.herokuapp.com/authentication/register`;
   const req = `?username=${sname}&email=${email}&password=${password}&sec_question=${question}&sec_answer=${answer}`;
   const query = `${base}${req}`;
   const Sign = async () => {
@@ -55,7 +55,7 @@ login.addEventListener('submit', (e) =>{
     e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const base = `https://ensemble-p2.herokuapp.com/authentication/login`;
+    const base = `https://ensemble-apis.herokuapp.com/authentication/login`;
     const req = `?email=${email}&password=${password}`;
     const query = `${base}${req}`;
     const logy = async () => {

@@ -22,29 +22,33 @@ const reupdate = () =>{
 
 // DISPLAYING THE LISTS
 const displayLists = () =>{
-    const base = `https://ensemble-p2.herokuapp.com/lists/get_all_lists`;
+    const base = `https://ensemble-apis.herokuapp.com/lists/get_board_lists`;
     const req = `?board_fid=${bid}&token=${token}`;
     const query = `${base}${req}`;
     const getLists = async () =>{
         const response = await fetch(query, {
-            method: 'POST'
+            method: 'GET'
             });
             const data = await response.json();
             var ldata = data.data;
+            console.log(ldata)
             contain.innerHTML = ``;
-            for( var i in ldata){
-                var currl = ldata[i];
-                var jcurrl = Array.from(currl);
+            ldata.forEach(current => {
+                console.log(current)
                 contain.innerHTML += `
-                <div class="card" id="${jcurrl[3]}">
-                <b> ${jcurrl[1]}</b><br>
-                <button class="btn" onclick="startUpdate('${jcurrl[3]}')">Edit</button>
-                <button class="btn" onclick="remove('${jcurrl[3]}')">Delete</button>
-                <button class="btn" onclick="Addtask('${jcurrl[3]}')">Task +</button>
-                <center><button class="btn" onclick="Expand('${jcurrl[3]}')">⮟</button></center>
+                <div class="card" id="${current.list_luid}">
+                <b> ${current.list_name}</b><br>
+                <button class="btn" onclick="startUpdate('${current.list_luid}')">Edit</button>
+                <button class="btn" onclick="remove('${current.list_luid}')">Delete</button>
+                <button class="btn" onclick="Addtask('${current.list_luid}')">Task +</button>
+                <center><button class="btn" onclick="Expand('${current.list_luid}')">⮟</button></center>
                 </div>
                 `
-            }
+            });
+            // for( var i in ldata){
+            //     var currl = ldata[i];
+            //     var jcurrl = Array.from(currl);
+            // }
     }
     getLists();
 
@@ -57,7 +61,7 @@ form.addEventListener('submit', (e)=>{
     e.preventDefault();
     const lname = $('#lname').val();
     const insertBoard = () => {
-    const base = `https://ensemble-p2.herokuapp.com/lists/insert_list`;
+    const base = `https://ensemble-apis.herokuapp.com/lists/insert_list`;
     const req = `?board_fid=${bid}&name=${lname}&color_code=1&token=${token}`;
     const query = `${base}${req}`;
     const getLists = async () =>{
@@ -78,7 +82,7 @@ form.addEventListener('submit', (e)=>{
 const remove = (id) => {
     const luid = id;
     const deleteList = () =>{
-        const base = `https://ensemble-p2.herokuapp.com/lists/delete_list`;
+        const base = `https://ensemble-apis.herokuapp.com/lists/delete_list`;
         const req = `?luid=${luid}&token=${token}`;
         const query = `${base}${req}`;
         const del = async () =>{
@@ -102,7 +106,7 @@ const startUpdate = (id) => {
         e.preventDefault();
         const ulname = $('#ulname').val();
         const updateList = () =>{
-            const base = `https://ensemble-p2.herokuapp.com/lists/update_list`;
+            const base = `https://ensemble-apis.herokuapp.com/lists/update_list`;
             const req = `?luid=${luid}&token=${token}&name=${ulname}`;
             const query = `${base}${req}`;
             const up = async () =>{
@@ -165,7 +169,7 @@ const add = (id) =>{
         }
         activelist.innerHTML += `<div class="subcard"><b>${tname}</b><br> ${tdesc}<br><b>Due: ${tdate}</b> ${col}</div>`
         const insertTask = () =>{
-        const base = `https://ensemble-p2.herokuapp.com/tasks/insert_task`;
+        const base = `https://ensemble-apis.herokuapp.com/tasks/insert_task`;
         const req = `?task_name=${tname}&task_description=${tdesc}&Task_completion=${tstatus}&Due_date_time=${tdate}&list_fid=${lid}&token=${token}`;
         const query = `${base}${req}`;
         const addTasks = async () =>{
@@ -183,7 +187,7 @@ const add = (id) =>{
 
 /// DISPLAYING TASKS
 const Expand = (id) =>{
-    const base = `https://ensemble-p2.herokuapp.com/tasks/get_all_tasks`;
+    const base = `https://ensemble-apis.herokuapp.com/tasks/get_all_tasks`;
     const req = `?list_fid=${id}&token=${token}`;
     const query = `${base}${req}`;
     const activelist = document.getElementById(id);
@@ -255,7 +259,7 @@ memAddForm.addEventListener('submit', (e) =>{
     e.preventDefault();
     memlist.style.display = "block";
     const memail = $('#memail').val();
-    const base = `https://ensemble-p2.herokuapp.com/members/add_member`;
+    const base = `https://ensemble-apis.herokuapp.com/members/add_member`;
     const req = `?buid=${bid}&email=${memail}&token=${token}`;
     const query = `${base}${req}`;
     const addMembers = async () =>{
@@ -272,7 +276,7 @@ memAddForm.addEventListener('submit', (e) =>{
 
 memlist.addEventListener('click', (e) =>{
     e.preventDefault();
-    const base = `https://ensemble-p2.herokuapp.com/members/get_members`;
+    const base = `https://ensemble-apis.herokuapp.com/members/get_members`;
     const req = `?buid=${bid}&token=${token}`;
     const query = `${base}${req}`;
     const getMembers = async () =>{
@@ -309,7 +313,7 @@ const removeMember = (id) =>{
     const iid = id;
     const curMember = $(`#${iid}`);
     console.log(curMember);
-    const base = `https://ensemble-p2.herokuapp.com/members/delete_member`;
+    const base = `https://ensemble-apis.herokuapp.com/members/delete_member`;
     const req = `?buid=${bid}&uid=${iid}&token=${token}`;
     const query = `${base}${req}`;
     const delMembers = async () =>{
