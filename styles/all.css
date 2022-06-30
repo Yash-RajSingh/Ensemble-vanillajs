@@ -51,6 +51,7 @@ body{
     background: linear-gradient(to top right,#ffffffa4 1%, #37acffd3 55%, #00285c 125%)fixed;
     font-family: 'Robot';
     font-size: var(--txt);
+    overflow-x: hidden;
 }
 
 
